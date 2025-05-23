@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
-=======
-@tailwind base;
-@tailwind components;
->>>>>>> 5327f6b3b6e8b57f65826a88d674e934c60c91b5
 @tailwind utilities;
+
+/* Optional custom styling */
+body {
+  @apply bg-gradient-to-b from-gray-900 to-purple-900 text-white;
+}

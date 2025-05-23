@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional custom styling */
+/* Custom styling (optional) */
 body {
-  @apply bg-gradient-to-b from-gray-900 to-purple-900 text-white;
+  background: linear-gradient(to bottom, #111827, #6b21a8);
+  color: white;
 }

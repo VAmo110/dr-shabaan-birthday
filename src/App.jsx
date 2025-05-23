@@ -54,20 +54,21 @@ const Sparkles = () => {
 
 const CountdownTimer = () => {
   const nextBirthday = new Date('2026-05-23');
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  function calculateTimeLeft() {
-    const now = new Date();
-    const difference = nextBirthday - now;
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  }
+  const [timeLeft, setTimeLeft] = useState({});
 
   useEffect(() => {
+    function calculateTimeLeft() {
+      const now = new Date();
+      const difference = nextBirthday - now;
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    setTimeLeft(calculateTimeLeft());
     const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
@@ -120,7 +121,7 @@ const Guestbook = () => {
       }
     }
     setResult(isCorrect
-      ? '🎉 Congratulations! Dr.Shaaban! You solved the equation correctly ,Thank you for your effort and we wish you a happy birthday ! 🎉 '
+      ? '🎉 Congratulations! Dr.Shaaban! You solved the equation correctly. Thank you for your effort and we wish you a happy birthday! 🎉'
       : 'Sorry, the solution is incorrect. Please try again or consult Dr. Shabaan! 😊');
   };
 
@@ -194,12 +195,8 @@ const Guestbook = () => {
 };
 
 const App = () => {
-  const fireConfetti = () => {
-    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-  };
-
   useEffect(() => {
-    fireConfetti();
+    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
   }, []);
 
   return (
@@ -230,7 +227,7 @@ const App = () => {
             From your biggest fans – your students 💜
           </p>
           <button
-            onClick={fireConfetti}
+            onClick={() => confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } })}
             className="mt-6 bg-purple-600 text-white py-2 px-6 rounded-lg hover:bg-purple-700 transition"
           >
             Celebrate!
@@ -250,7 +247,6 @@ const App = () => {
         </motion.div>
 
         <CountdownTimer />
-
         <Guestbook />
       </div>
     </div>

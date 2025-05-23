@@ -2,7 +2,6 @@
   "name": "birthday-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://VAmo110.github.io/birthday-website",
   "dependencies": {
     "canvas-confetti": "^1.6.0",
     "framer-motion": "^10.12.16",

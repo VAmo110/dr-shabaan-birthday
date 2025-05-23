@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "birthday-website",
   "version": "0.1.0",
@@ -22,4 +23,30 @@
     "build": "vite build",
     "preview": "vite preview"
   }
+=======
+{
+  "name": "birthday-website",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://<VAmo110>.github.io/birthday-website",
+  "dependencies": {
+    "canvas-confetti": "^1.6.0",
+    "framer-motion": "^10.12.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-image-gallery": "^1.2.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+>>>>>>> 5327f6b3b6e8b57f65826a88d674e934c60c91b5
 }
